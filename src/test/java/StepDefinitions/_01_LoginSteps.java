@@ -10,30 +10,39 @@ public class _01_LoginSteps {
     DialogContent dc=new DialogContent();
 
 
-    @Given("Navigate to basqar")
-    public void navigateToBasqar() {
-        GWD.getDriver().get("https://demo.mersys.io/");
+    @Given("Navigate to parabank")
+    public void navigateToParabank() {
+        GWD.getDriver().get("https://parabank.parasoft.com/");
         GWD.getDriver().manage().window().maximize();
-        dc.findAndClick("acceptAllCookiesButton");
+        //dc.findAndClick("acceptAllCookiesButton");
     }
 
     @When("Enter username and password and click login button")
     public void enterUsernameAndPasswordAndClickLoginButton() {
-        // waitleri var
-//        dc.username.sendKeys("richfield.edu");
-//        dc.password.sendKeys("Richfield2020!");
-//        dc.loginButton.click();
-        // 1 .aşama
-        dc.findAndSend("username","richfield.edu");
-        dc.findAndSend("password","Richfield2020!");
+
+        dc.findAndSend("username","grup02");
+        dc.findAndSend("password","22222");
         dc.findAndClick("loginButton");
     }
 
     @Then("User should login successfuly")
     public void userShouldLoginSuccessfuly() {
-//        dc.waitUntilVisible(dc.dashboard);
-//        Assert.assertTrue(dc.dashboard.getText().contains("Dashboard"));
+//        dc.waitUntilVisible(dc.successMessage);
+//        Assert.assertTrue(dc.successMessage.getText().contains("Welcome"));
 
-        dc.findAndContainsText("dashboard","Dashboard");
+        dc.findAndContainsText("successMessage","Welcome");
+    }
+
+    @Then("User should login unsuccessfull")
+    public void userShouldLoginUnsuccessfull() {
+
+        dc.findAndSend("username","0grup2");
+        dc.findAndSend("password","022222");
+        dc.findAndClick("loginButton");
+
+    }
+
+    @Then("Success message should be displayed")
+    public void successMessageShouldBeDisplayed() {
     }
 }

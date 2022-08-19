@@ -12,20 +12,99 @@ public class DialogContent extends Parent{
         PageFactory.initElements(GWD.getDriver(), this); //DON'T FORGET THIS ;)
     }
 
-    @FindBy(xpath="//button[.='Accept all cookies']")
-    private WebElement acceptAllCookiesButton;
 
-    @FindBy(id="mat-input-0")
+    @FindBy(linkText = "Register")
+    private WebElement register;
+
+    @FindBy(id = "customer.firstName")
+    private WebElement firstName;
+
+    @FindBy(id = "customer.lastName")
+    private WebElement lastName;
+
+    @FindBy(id = "customer.address.street")
+    private WebElement adress;
+
+    @FindBy(id = "customer.address.city")
+    private WebElement city;
+
+    @FindBy(id = "customer.address.state")
+    private WebElement state;
+
+    @FindBy(id = "customer.address.zipCode")
+    private WebElement zipCode;
+
+    @FindBy(id = "customer.phoneNumber")
+    private WebElement phoneNumber;
+
+    @FindBy(id = "customer.ssn")
+    private WebElement ssn;
+
+    @FindBy(id = "customer.username")
+    private WebElement regUsername;
+
+    @FindBy(id = "customer.password")
+    private WebElement regPassword;
+
+    @FindBy(id = "repeatedPassword")
+    private WebElement confirmPassword;
+
+    @FindBy(css = "[value=\"Register\"]")
+    private WebElement registerButton;
+
+    @FindBy(xpath = "//*[@id=\"rightPanel\"]/p")
+    private WebElement registerSucces;
+    @FindBy(name="username")
     private WebElement username;
 
-    @FindBy(id="mat-input-1")
+    @FindBy(name="password")
     private WebElement password;
 
-    @FindBy(css="button[aria-label='LOGIN']")
+    @FindBy(css="input[value=\"Log In\"]")
     private WebElement loginButton;
 
-    @FindBy(xpath="(//span[contains(text(),'Dashboard')])[2]")
-    private WebElement dashboard;
+    @FindBy(xpath = "//b[text()='Welcome']")
+    private WebElement successMessage;
+
+    @FindBy(css = "p.error")
+    private WebElement unsuccessMessage;
+
+    @FindBy(linkText = "Bill Pay")
+    private WebElement billPayLink;
+
+    @FindBy(name = "payee.name")
+    private WebElement payeeName;
+
+    @FindBy(name = "payee.address.street")
+    private WebElement payeeAddressStreet;
+
+    @FindBy(name = "payee.address.city")
+    private WebElement payeeAddressCity;
+
+    @FindBy(name = "payee.address.state")
+    private WebElement payeeAddressState;
+
+    @FindBy(name = "payee.address.zipCode")
+    private WebElement payeeAddresszipCode;
+
+    @FindBy(name = "payee.phoneNumber")
+    private WebElement payeePhone;
+
+    @FindBy(name = "payee.accountNumber")
+    private WebElement payeeAccount;
+
+    @FindBy(name = "verifyAccount")
+    private WebElement verifyAccount;
+
+    @FindBy(name = "amount")
+    private WebElement amount;
+
+    @FindBy(css = "input[value='Send Payment']")
+    private WebElement sendPaymentBtn;
+
+    @FindBy(xpath = "//h1[text()=\"Bill Payment Complete\"]")
+    private WebElement billPaymentCheckMessage;
+
 
     @FindBy(xpath="//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
     private WebElement addButton;
@@ -39,8 +118,6 @@ public class DialogContent extends Parent{
     @FindBy(xpath="//ms-save-button//button")
     private WebElement saveButton;
 
-    @FindBy(xpath = "//div[contains(text(),'successfully')]")
-    private WebElement successMessage;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']//input")
     private WebElement shortName;
@@ -57,11 +134,30 @@ public class DialogContent extends Parent{
         // burda string isimden weblemente ulaşıcam
         switch (strElement)
         {
+
+            case "firstName" : myElement =firstName; break;
+            case "lastName" : myElement =lastName; break;
+            case "adress" : myElement =adress; break;
+            case "city" : myElement =city; break;
+            case "state" : myElement =state; break;
+            case "zipCode" : myElement =zipCode; break;
+            case "phoneNumber" : myElement =phoneNumber; break;
+            case "ssn" : myElement =ssn; break;
+            case "regUsername" : myElement =regUsername; break;
+            case "regPassword" : myElement =regPassword; break;
+            case "confirmPassword" : myElement =confirmPassword; break;
+            /************************************************************/
             case "username" : myElement =username; break;
             case "password" : myElement =password; break;
-            case "nameInput" : myElement =nameInput; break;
-            case "codeInput" : myElement =codeInput; break;
-            case "shortName" : myElement =shortName; break;
+            case "payeeName" : myElement =payeeName; break;
+            case "payeeAddressStreet" : myElement =payeeAddressStreet; break;
+            case "payeeAddressCity" : myElement =payeeAddressCity; break;
+            case "payeeAddressState" : myElement =payeeAddressState; break;
+            case "payeeAddresszipCode" : myElement =payeeAddresszipCode; break;
+            case "payeePhone" : myElement =payeePhone; break;
+            case "payeeAccount" : myElement =payeeAccount; break;
+            case "verifyAccount" : myElement =verifyAccount; break;
+            case "amount" : myElement =amount; break;
         }
 
         sendKeysFunction(myElement, value);
@@ -71,11 +167,11 @@ public class DialogContent extends Parent{
         // burda string isimden weblemente ulaşıcam
         switch (strElement)
         {
+            case "register" : myElement =register; break;
+            case "registerButton" : myElement =registerButton; break;
             case "loginButton" : myElement =loginButton; break;
-            case "acceptAllCookiesButton" : myElement = acceptAllCookiesButton; break;
-            case "addButton" : myElement =addButton; break;
-            case "saveButton" : myElement =saveButton; break;
-            case "closeDialog" : myElement =closeDialog; break;
+            case "billPayLink" : myElement =billPayLink; break;
+            case "sendPaymentBtn" : myElement =sendPaymentBtn; break;
         }
 
         clickFunction(myElement);
@@ -85,26 +181,13 @@ public class DialogContent extends Parent{
         // burda string isimden weblemente ulaşıcam
         switch (strElement)
         {
-            case "dashboard" : myElement =dashboard; break;
+            case "registerSucces" : myElement =registerSucces; break;
             case "successMessage" : myElement =successMessage; break;
-            case "alreadyExist" : myElement =alreadyExist; break;
+            case "unsuccessMessage" : myElement =unsuccessMessage; break;
+            case "billPaymentCheckMessage" : myElement =billPaymentCheckMessage; break;
         }
 
         verifyContainsText(myElement,text);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

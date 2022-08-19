@@ -1,0 +1,43 @@
+PROJECT – 6
+
+Test edilecek site: https://parabank.parasoft.com/
+NOT : Bu bir test sitesidir.
+Bu projede Cucumber kullanılacaktır. Senaryo 2 ve Senaryo 3 de Senaryo Outline kullanınız.
+Hesap açarken gerçek olmayan bilgiler kullanınız.
+
+Senaryo 1| Register Functionality
+• Para Bank sitesinde bir hesap açınız
+    >> username: grup2  >> name = username
+    >> password: 22222  >> name = password
+
+• Hesabın açıldığını “Your account was created successfully. You are now logged in.”
+mesajını doğrulayınız.  >>> [id='rightPanel']>p
+
+Senaryo 2| Login Functionality
+• Para Bank sitesine geçerli kullanıcı bilgileriyle giriş yapınız ve Login olduğunuzu
+doğrulayınız >>OK
+• Para Bank sitesine geçersiz kullanıcı bilgileriyle giriş yapınız ve login olmadığınızı
+doğrulayınız. (Username ve password için ayrı ayrı deneyin)
+
+Senaryo 3 | Bill Pay Functionality
+• Bill Pay sayfasına gidiniz
+• Elektrik (85), Su (45), Doğalgaz (120) faturalarını ödeyiniz
+NOT: Her fatura için farklı veri kullanınız.
+• Her ödemeden sonra faturanın ödendiğini doğrulayınız
+
+successMessage
+unsuccessMessage
+billPay
+payeeName
+payeeAddressStreet
+payeeAddressCity
+payeeAddressState
+payeeAddresszipCode
+payeePhone
+payeeAccount
+verifyAccount
+amount
+sendPayment
+billPaymentCheckMessage
+
+
