@@ -7,8 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DialogContent extends Parent{
 
+    /************* BUNU UNUTMA !!! :) ******************/
     public DialogContent() {
-        PageFactory.initElements(GWD.getDriver(), this);
+        PageFactory.initElements(GWD.getDriver(), this); //DON'T FORGET THIS ;)
     }
 
     @FindBy(xpath="//button[.='Accept all cookies']")
